@@ -1,0 +1,2652 @@
+	    <!-- Samp Funcs -->
+
+      <!-- Samp opcodes -->
+
+	<Command ID="0xaf6" Name="SAMP_SPAWN_PLAYER">
+	</Command>
+
+	<Command ID="0xaf7" Name="GET_SAMP_BASE">
+		<Args>
+			<Arg Type="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xaf8" Name="SAMP_ADD_MESSAGE_TO_CHAT">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+			<Arg Type="INT" Desc="Color"/>
+      <Arg Type="PARAM" Desc="Formatting(optional)" Optional="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xaf9" Name="SAMP_SAY_MSG">
+		<Args>
+			<Arg Type="STRING"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xafa" Name="IS_SAMP_AVAILABLE">
+	</Command>
+	
+	<Command ID="0xafb" Name="SAMP_REQUEST_CLASS">
+		<Args> 
+			<Arg Type="INT" Desc="CoverID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xafc" Name="SAMP_SEND_SCM_EVENT">
+		<Args> 
+			<Arg Type="INT" Desc="VehicleID"/>
+			<Arg Type="INT" Desc="Type"/> 
+			<Arg Type="INT" Desc="Param1"/>
+			<Arg Type="INT" Desc="Param2"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xafd" Name="SAMP_SET_SPECIAL_ACTION">
+		<Args>
+			<Arg Type="INT" Desc="ActionNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xafe" Name="SAMP_SEND_DEATH_BY_PLAYER">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Reason"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xaff" Name="CAR_HANDLE_BY_SAMP_VEHICLE_ID">
+		<Args>
+			<Arg Type="INT" Desc="SampVehID"/>
+			<Arg Type="INT" Desc="CarID" Entity="CAR"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb20" Name="ACTOR_HANDLE_BY_SAMP_PLAYER_ID">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+      <Arg Type="INT" Desc="PlayerHandle" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb21" Name="IS_SAMP_CHAT_OPENED">
+	</Command>
+	
+	<Command ID="0xb22" Name="SAMP_SET_SENDRATE">
+		<Args>
+			<Arg Type="INT" Desc="Type"/>
+			<Arg Type="INT" Desc="Delay"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb23" Name="IS_SAMP_PLAYER_CONNECTED">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb24" Name="GET_SAMP_PLAYER_STRUCT_PTR">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Struct" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb25" Name="GET_SAMP_PLAYER_HEALTH">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="health" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb26" Name="GET_SAMP_PLAYER_ARMOR">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="armor" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb27" Name="SET_SAMP_GAMESTATE">
+		<Args>
+			<Arg Type="INT" Desc="State"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb28" Name="DISCONNECT_SAMP_WITH_REASON">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb29" Name="SET_SAMP_LOCAL_NAME">
+		<Args>
+			<Arg Type="STRING" Desc="NewNickname"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb2a" Name="GET_SAMP_PLAYER_PING">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Ping" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb2b" Name="GET_SAMP_PLAYER_ID_BY_ACTOR_HANDLE">
+		<Args>
+			<Arg Type="INT" Desc="ActorID"/>
+			<Arg Type="INT" Desc="PlayerID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb2c" Name="GET_SAMP_VEHICLE_ID_BY_CAR_HANDLE">
+		<Args>
+			<Arg Type="INT" Desc="CarID"/>
+			<Arg Type="INT" Desc="VehicleID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb2f" Name="GET_SAMP_STREAMED_OUT_PLAYER_POS">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="FLOAT" Desc="X" Out="true"/> 
+			<Arg Type="FLOAT" Desc="Y" Out="true"/>
+			<Arg Type="FLOAT" Desc="Z" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb30" Name="SAMP_SEND_ENTER_VEHICLE">
+		<Args>
+			<Arg Type="INT" Desc="VehicleID"/>
+			<Arg Type="INT" Desc="PassagerID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb31" Name="SAMP_SEND_EXIT_VEHICLE">
+		<Args>
+			<Arg Type="INT" Desc="Id"/>
+		</Args>
+	</Command>
+
+	<Command ID="0xb32" Name="SAMP_SEND_SPAWN">
+	</Command>
+	
+	<Command ID="0xb33" Name="SAMP_SEND_DAMAGE_VEHICLE">
+		<Args>
+			<Arg Type="INT" Desc="VehicleID"/>
+			<Arg Type="INT" Desc="Painel"/>
+			<Arg Type="INT" Desc="Doors"/>
+			<Arg Type="INT" Desc="Lamps"/>
+			<Arg Type="INT" Desc="Tires"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb34" Name="SAMP_REGISTER_CLIENT_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="Command"/>
+			<Arg Type="LABEL" Desc="CommandBody"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb35" Name="GET_SAMP_LAST_COMMAND_PARAMS">
+		<Args>
+			<Arg Type="INT" Desc="Pointer"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb36" Name="GET_SAMP_PLAYER_NICK">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Nick" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb37" Name="GET_SAMP_PLAYER_COLOR">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Color(RGB)" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb38" Name="SAMP_CONNECT_TO_SERVER">
+		<Args>
+			<Arg Type="STRING" Desc="ServerIP"/>
+			<Arg Type="INT" Desc="Port"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb39" Name="GET_SAMP_CURRENT_SERVER_ADDRESS">
+		<Args>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+			<Arg Type="INT" Desc="Port" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb3a" Name="GET_SAMP_CURRENT_SERVER_NAME">
+		<Args>
+			<Arg Type="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb3b" Name="SAMP_SHOW_DIALOG">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="STRING" Desc="name"/>
+			<Arg Type="STRING" Desc="content"/>
+			<Arg Type="STRING" Desc="String"/>
+			<Arg Type="STRING" Desc="String"/>
+			<Arg Type="INT" Desc="Style"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb3c" Name="IS_SAMP_DIALOG_RESPONDED">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="keyID"/>
+			<Arg Type="INT" Desc="Element"/>
+			<Arg Type="INT" Desc="buffer"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb43" Name="SAMP_CMD_RET">
+	</Command>
+	
+	<Command ID="0xb44" Name="SAMP_CREATE_3D_TEXT">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+			<Arg Type="FLOAT" Desc="Color(RGB)"/>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+			<Arg Type="FLOAT" Desc="Z"/>
+			<Arg Type="FLOAT" Desc="VisibilityZone"/>
+			<Arg Type="INT" Desc="INT"/>
+			<Arg Type="INT" Desc="INT"/>
+			<Arg Type="INT" Desc="INT"/>
+			<Arg Type="INT" Desc="3DTextID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb45" Name="SAMP_DESTROY_3D_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="TextID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb46" Name="SAMP_3D_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="TextID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb47" Name="SAMP_CLOSE_CURRENT_DIALOG_WITH_BUTTON">
+		<Args>
+			<Arg Type="INT" Desc="ButtonID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb48" Name="GET_SAMP_CURRENT_DIALOG_LIST_ITEM">
+		<Args>
+			<Arg Type="INT" Desc="Element number" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb49" Name="SET_SAMP_CURRENT_DIALOG_LIST_ITEM">
+		<Args>
+			<Arg Type="INT" Desc="ElementNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb4a" Name="GET_SAMP_CURRENT_DIALOG_EDITBOX_ITEM">
+		<Args>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb4b" Name="SET_SAMP_CURRENT_DIALOG_EDITBOX_TEXT">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb4c" Name="IS_SAMP_DIALOG_ACTIVE">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb4d" Name="GET_SAMP_CURRENT_DIALOG_TYPE">
+		<Args>
+			<Arg Type="INT" Desc="Style" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb4e" Name="GET_SAMP_CURRENT_DIALOG_ID">
+		<Args>
+			<Arg Type="INT" Desc="DialogID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb4f" Name="GET_SAMP_GAMESTATE">
+		<Args>
+			<Arg Type="INT" Desc="Gamestate" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb50" Name="SAMP_OBJECT_HANDLE_BY_ID">
+		<Args>
+			<Arg Type="INT" Desc="ObjectID"/>
+			<Arg Type="INT" Desc="ObjectHandle" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb51" Name="SAMP_PICKUP_HANDLE_BY_ID">
+		<Args>
+			<Arg Type="INT" Desc="PickupID"/>
+			<Arg Type="INT" Desc="PickupHandle" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb52" Name="SAMP_OBJECT_ID_BY_HANDLE">
+		<Args>
+			<Arg Type="INT" Desc="ObjectHandle"/>
+			<Arg Type="INT" Desc="ObjectID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb53" Name="SAMP_PICKUP_ID_BY_HANDLE">
+		<Args>
+			<Arg Type="INT" Desc="PickupHandle"/>
+			<Arg Type="INT" Desc="PickupID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb54" Name="LISTBOX_ITEMS_COUNT">
+		<Args>
+			<Arg Type="INT" Desc="NumberElements"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb57" Name="GET_SAMP_PLAYER_ANIM_ID">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="AnimationID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb58" Name="GET_SAMP_ANIM_NAME_TO">
+		<Args>
+			<Arg Type="INT" Desc="BufferFile" Out="true"/>
+			<Arg Type="INT" Desc="BufferName" Out="true"/>
+			<Arg Type="INT" Desc="AnimID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb59" Name="SAMP_ANIM_ID_BY_NAME">
+		<Args>
+			<Arg Type="STRING" Desc="AnimName"/>
+			<Arg Type="STRING" Desc="FileName"/>
+			<Arg Type="INT" Desc="AnimID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb5b" Name="GET_SAMP_LISTBOX_ITEM">
+		<Args>
+			<Arg Type="INT" Desc="ElementNumber"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb5c" Name="IS_SAMP_PLAYER_PAUSED">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb5d" Name="SAMP_TOGGLE_CURSOR">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb61" Name="IS_SAMP_LOCAL_PLAYER_SPAWNED">
+	</Command>
+	
+	<Command ID="0xb62" Name="SAMP_PLAYER_SPECIAL_ACTION">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="SpecialActionID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb63" Name="SAMP_UNREGISTER_CLIENT_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="Command"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb64" Name="IS_SAMP_PLAYER_NPC">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb65" Name="SAMP_PLAYER_SCORE">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="ScoreNumber" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb74" Name="SAMP_SET_CHAT_STRING">
+		<Args>
+			<Arg Type="INT" Desc="StringID"/>
+			<Arg Type="STRING" Desc="Text"/>
+			<Arg Type="STRING" Desc="Prefix"/>
+			<Arg Type="INT" Desc="StringColor"/>
+			<Arg Type="INT" Desc="PrefixColor"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb75" Name="GET_SAMP_CHAT_STRING">
+		<Args>
+			<Arg Type="INT" Desc="StringID"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+			<Arg Type="INT" Desc="BufferPrefix" Out="true"/>
+			<Arg Type="INT" Desc="stringColor" Out="true"/>
+			<Arg Type="INT" Desc="prefixColor" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb76" Name="SET_SAMP_CHAT_IMPUT_TEXT">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb77" Name="GET_SAMP_CHAT_INPUT_TEXT_TO">
+		<Args>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb79" Name="SET_SAMP_CHAT_INPUT_ENABLED">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb7f" Name="GET_SAMP_INFO_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb8c" Name="IS_SAMP_CURSOR_ACTIVE">
+	</Command>
+	
+	<Command ID="0xb8d" Name="SET_SAMP_CURSOR_MODE">
+		<Args>
+			<Arg Type="INT" Desc="Mode"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb8e" Name="GET_SAMP_CURSOR_MODE">
+		<Args>
+			<Arg Type="INT" Desc="Mode" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbac" Name="GET_SAMP_SERVER_SETTINGS_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbad" Name="GET_SAMP_POOLS_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbae" Name="GET_SAMP_CHAT_INFO_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbaf" Name="GET_SAMP_INPUT_INFO_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb0" Name="GET_SAMP_DIALOG_INFO_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb1" Name="GET_SAMP_KILL_INFO_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb2" Name="GET_SAMP_MISC_INFO_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb3" Name="GET_SAMP_TEXTDRAW_POOL_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb4" Name="GET_SAMP_OBJECT_POOL_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb5" Name="GET_SAMP_GANGZONE_POOL_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb6" Name="GET_SAMP_TEXTLABEL_POOL_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb7" Name="GET_SAMP_PLAYER_POOL_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb8" Name="GET_SAMP_VEHICLE_POOL_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbb9" Name="GET_SAMP_PICKUP_POOL_PTR">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbba" Name="SAMP_STORE_PLAYER_ONFOOT_DATA">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbbb" Name="SAMP_STORE_PLAYER_INCAR_DATA">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbbc" Name="SAMP_STORE_PLAYER_PASSANGER_DATA">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbbd" Name="SAMP_STORE_PLAYER_TRAILER_DATA">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbbe" Name="SAMP_STORE_PLAYER_AIM_DATA">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbbf" Name="SAMP_SEND_RCON_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="Command"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc0" Name="SAMP_SEND_ONFOOT_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc1" Name="SAMP_SEND_INCAR_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc2" Name="SAMP_SEND_PASSANGER_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc3" Name="SAMP_SEND_AIM_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc4" Name="SAMP_SEND_BULLET_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc5" Name="SAMP_SEND_TRAILER_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc6" Name="SAMP_SEND_UNOCCUPIED_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc7" Name="SAMP_SEND_SPECTATOR_DATA">
+		<Args>
+			<Arg Type="INT" Desc="FilledStructure"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc8" Name="SAMP_SEND_CLICK_PLAYER">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="CallLocation"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbc9" Name="SAMP_SEND_DIALOG_RESPONSE">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT" Desc="ElementNumber"/>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbca" Name="SAMP_SEND_CLICK_TEXTDRAW">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbcb" Name="SAMP_SEND_GIVE_DAMAGE">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="AmountDamage"/>
+			<Arg Type="INT" Desc="WeaponID"/>
+			<Arg Type="INT" Desc="BodyPartID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbcc" Name="SAMP_SEND_TAKE_DAMAGE">
+		<Args>
+			<Arg Type="INT" Desc="PlayerID"/>
+			<Arg Type="INT" Desc="AmountDamage"/>
+			<Arg Type="INT" Desc="WeaponID"/>
+			<Arg Type="INT" Desc="BodyPartID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbcd" Name="SAMP_SEND_EDIT_OBJECT">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT" Desc="objectID"/>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+			<Arg Type="FLOAT" Desc="Z"/>
+			<Arg Type="FLOAT" Desc="RotationX"/>
+			<Arg Type="FLOAT" Desc="RotationY"/>
+			<Arg Type="FLOAT" Desc="RotationZ"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbce" Name="SAMP_SEND_EDIT_ATTACHED_OBJECT">
+		<Args>
+			<Arg Type="INT" Desc="ResponseStatus"/> 
+			<Arg Type="INT" Desc="objectSlot"/>
+			<Arg Type="INT" Desc="objectModel"/>
+			<Arg Type="INT" Desc="BoneID"/>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+			<Arg Type="FLOAT" Desc="Z"/> 
+			<Arg Type="FLOAT" Desc="RotationX"/>
+			<Arg Type="FLOAT" Desc="RotationY"/>
+			<Arg Type="FLOAT" Desc="RotationZ"/>
+			<Arg Type="FLOAT" Desc="ScaleX"/>
+			<Arg Type="FLOAT" Desc="ScaleY"/>
+			<Arg Type="FLOAT" Desc="ScaleZ"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbcf" Name="SAMP_SEND_INTERIOR_CHANGE">
+		<Args>
+			<Arg Type="INT" Desc="InteriorID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbd0" Name="SAMP_SEND_REQUEST_SPAWN">
+	</Command>
+	
+	<Command ID="0xbd1" Name="SAMP_SEND_PICKED_UP_PICKUP">
+		<Args>
+			<Arg Type="INT" Desc="PickupID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbd2" Name="SAMP_SEND_MENU_SELECT_ROW">
+		<Args>
+			<Arg Type="INT" Desc="ElementID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbd3" Name="SAMP_SEND_MENU_QUIT">
+	</Command>
+	
+	<Command ID="0xbd4" Name="SAMP_SEND_VEHICLE_DESTROYED">
+		<Args>
+			<Arg Type="INT" Desc="VehicleID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbd5" Name="IS_SAMP_SCOREBOARD_OPENED">
+	</Command>
+	
+	<Command ID="0xbd6" Name="SAMP_ENABLE_SCOREBOARD">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbd7" Name="GET_SAMP_DIALOG_TEXT">
+		<Args>
+			<Arg Type="STRING" Desc="Buffer(Text)" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbd8" Name="GET_SAMP_DIALOG_CAPTION">
+		<Args>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbd9" Name="SET_SAMP_DIALOG_CLIENTSIDE">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbda" Name="IS_SAMP_DIALOG_CLIENTSIDE">
+	</Command>
+	
+	<Command ID="0xbdb" Name="IS_SAMP_CHAT_VISIBLE">
+	</Command>
+	
+	<Command ID="0xbdc" Name="GET_SAMP_CHAT_DISPLAY_MODE">
+		<Args>
+			<Arg Type="INT" Desc="Mode" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbdd" Name="SET_SAMP_CHAT_DISPLAY_MODE">
+		<Args>
+			<Arg Type="INT" Desc="Mode"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc45" Name="SAMP_CREATE_3D_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="3DTextID"/>
+			<Arg Type="STRING" Desc="Text"/>
+			<Arg Type="INT" Desc="Color"/>
+			<Arg Type="INT" Desc="X"/>
+			<Arg Type="INT" Desc="Y"/>
+			<Arg Type="INT" Desc="Z"/>
+			<Arg Type="FLOAT" Desc="ZoneVisibility"/>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc46" Name="GET_SAMP_3D_TEXT_INFO_BY_ID">
+		<Args>
+			<Arg Type="INT" Desc="3DTextID"/>
+			<Arg Type="INT" Desc="Text(pointer)" Out="true"/>
+			<Arg Type="INT" Desc="Color" Out="true"/>
+			<Arg Type="FLOAT" Desc="X" Out="true"/>
+			<Arg Type="FLOAT" Desc="Y" Out="true"/>
+			<Arg Type="FLOAT" Desc="Z" Out="true"/>
+			<Arg Type="FLOAT" Desc="VisibilityArea" Out="true"/>
+			<Arg Type="INT" Desc="Bool" Out="true"/>
+			<Arg Type="INT" Desc="attachedToPlayer" Out="true"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc47" Name="SET_SAMP_3D_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="3DTextID"/>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc48" Name="SAMP_CREATE_TEXTDRAW">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="STRING" Desc="Text"/>
+			<Arg Type="FLOAT" Desc="X" />
+			<Arg Type="INT" Desc="Y"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc49" Name="SAMP_SET_BOX_TEXTDRAW">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT" Desc="Color"/>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc4a" Name="SAMP_SET_TEXTDRAW_ALIGN">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="AlignmentType"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc4b" Name="SAMP_SET_TEXTDRAW_PROPORCIONAL">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc4c" Name="SAMP_SET_TEXTDRAW_STYLE">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc4d" Name="SAMP_SET_TEXTDRAW_SHADOW">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Size"/>
+			<Arg Type="INT" Desc="Color"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc4e" Name="SAMP_SET_TEXTDRAW_OUTLINE">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="StrokeWeight"/>
+			<Arg Type="INT" Desc="Color"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc4f" Name="SAMP_SET_TEXTDRAW_MODEL">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="ModelID"/>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+			<Arg Type="FLOAT" Desc="Z"/>
+			<Arg Type="FLOAT" Desc="CameraRange"/>
+			<Arg Type="INT" Desc="PrimaryColor"/>
+			<Arg Type="INT" Desc="SecondaryColor"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc50" Name="SET_SAMP_TEXTDRAW_STRING">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc51" Name="SET_SAMP_TEXTDRAW_POS">
+		<Args>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc52" Name="´SET_SAMP_TEXTDRAW_LETTER_SIZE">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+			<Arg Type="INT" Desc="Color"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc53" Name="GET_SAMP_TEXTDRAW_BOX_ENABLED">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Bool" Out="true"/>
+			<Arg Type="INT" Desc="color" Out="true"/>
+			<Arg Type="INT" Desc="X" Out="true"/>
+			<Arg Type="INT" Desc="Y" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc54" Name="GET_SAMP_TEXTDRAW_ALIGN">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Bool" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc55" Name="GET_SAMP_TEXTDRAW_PROPORCIONAL">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Bool" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc56" Name="GET_SAMP_TEXTDRAW_STYLE">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Style" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc57" Name="GET_SAMP_TEXTDRAW_SHADOW">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Size" Out="true"/>
+			<Arg Type="INT" Desc="Color" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc58" Name="GET_SAMP_TEXTDRAW_OUTLINE">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Thickness" Out="true"/>
+			<Arg Type="INT" Desc="Color" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc59" Name="GET_SAMP_TEXTDRAW_MODEL">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="Model" Out="true"/>
+			<Arg Type="INT" Desc="X" Out="true"/>
+			<Arg Type="INT" Desc="Y" Out="true"/>
+			<Arg Type="INT" Desc="Z" Out="true"/>
+			<Arg Type="INT" Desc="PrimaryColor" Out="true"/>
+			<Arg Type="INT" Desc="SecondaryColor" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc5a" Name="GET_SAMP_TEXTDRAW_STRING_TO">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="BufferPointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc5b" Name="GET_SAMP_TEXTDRAW_POS">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="INT" Desc="X" Out="true"/>
+			<Arg Type="INT" Desc="Y" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc5c" Name="GET_SAMP_TEXTDRAW_LETTER_SIZE">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+			<Arg Type="FLOAT" Desc="characterLength"/>
+			<Arg Type="FLOAT" Desc="characterWidth"/>
+			<Arg Type="INT" Desc="Color"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc5d" Name="IS_SAMP_TEXTDRAW_EXISTS">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc5e" Name="SAMP_TEXTDRAW_DELETE">
+		<Args>
+			<Arg Type="INT" Desc="TextdrawID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc7f" Name="SET_SAMP_CLIENT_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="Command"/>
+			<Arg Type="STRING" Desc="DescriptionText"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc80" Name="SET_SAMP_CONSOLE_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="Command"/>
+			<Arg Type="STRING" Desc="Description"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc81" Name="SAMP_FORCE_VEHICLE_SYNC">
+		<Args>
+			<Arg Type="INT" Desc="VehicleID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc82" Name="SAMP_FORCE_UNOCCUPIED_SYNC">
+		<Args>
+			<Arg Type="INT" Desc="Vehicle"/>
+			<Arg Type="INT" Desc="SeatNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc83" Name="SAMP_FORCE_ONFOOT_SYNC">
+	</Command>
+	
+	<Command ID="0xc84" Name="SAMP_FORCE_AIM_SYNC">
+	</Command>
+	
+	<Command ID="0xc85" Name="SAMP_FORCE_TRAILER_SYNC">
+		<Args>
+			<Arg Type="INT" Desc="TrailerID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc86" Name="SAMP_FORCE_PASSENGER_SYNC">
+		<Args>
+			<Arg Type="INT" Desc="VehicleID"/>
+			<Arg Type="INT" Desc="PassangerSeatID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc87" Name="SAMP_FORCE_STATS_SYNC">
+	</Command>
+	
+	<Command ID="0xc88" Name="SAMP_FORCE_WEAPONS_SYNC">
+		<Args>
+			<Arg Type="INT"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc8a" Name="GET_SAMP_MAX_PLAYER_ID">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT" Desc="MaximumPlayerID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc8b" Name="GET_SAMP_PLAYER_COUNT">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT" Desc="NumberOfPlayers" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc8f" Name="SAMP_PROCESS_CHAT_INPUT">
+		<Args>
+			<Arg Type="STRING" Desc="StringToSend"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc90" Name="IS_SAMP_CLIENT_COMMAND_DEFINED">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc92" Name="GET_CLEO_LIBRARY_VERSION">
+		<Args>
+			<Arg Type="INT" Desc="Version" Out="true"/>
+		</Args>
+	</Command>
+	
+	<!-- Misc opcodes (SampFuncs) -->
+	
+	<Command ID="0xb55" Name="SAMP_CONVERT_3D_COORDS_TO_SCREEN">
+		<Args>
+			<Arg Type="FLOAT" Desc="X"/>
+			<Arg Type="FLOAT" Desc="Y"/>
+			<Arg Type="FLOAT" Desc="Z"/>
+			<Arg Type="INT" Desc="X" Out="true"/>
+			<Arg Type="INT" Desc="Y" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb56" Name="SET_SAMP_GAME_KEY">
+		<Args>
+			<Arg Type="INT" Desc="KeyIndex"/>
+			<Arg Type="INT" Desc="Status"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb5a" Name="GET_SAMP_SCREEN_RESOLUTION">
+		<Args>
+			<Arg Type="FLOAT" Desc="X" Out="true"/>
+			<Arg Type="FLOAT" Desc="Y" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb5e" Name="GET_SAMP_CURSOR_POS">
+		<Args>
+			<Arg Type="FLOAT" Desc="X" Out="true"/>
+			<Arg Type="FLOAT" Desc="Y" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb5f" Name="SAMP_CONVERT_WINDOW_SCREEN_COORDS_TO_GAME_SCREEN_COORDS">
+		<Args>
+			<Arg Type="INT"/>
+			<Arg Type="INT"/>
+			<Arg Type="FLOAT" Desc="X" Out="true"/>
+			<Arg Type="FLOAT" Desc="Y" Out="true"/>	
+		</Args>
+	</Command>
+	
+	<Command ID="0xb60" Name="SAMP_CONVERT_GAME_SCREEN_COORDS_TO_WINDOW_SCREEN_COORDS">
+		<Args>
+			<Arg Type="FLOAT" Desc="Float"/>
+			<Arg Type="FLOAT" Desc="Float"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb78" Name="SAMP_LOG">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb8f" Name="SAMP_CONVERT_SCREEN_COORDS_DEPTH_TO_WORLD_3D">
+		<Args>
+			<Arg Type="INT" Desc="ScreenCoordSystem"/>
+			<Arg Type="INT" Desc="ScreenCoordSystem"/>
+			<Arg Type="FLOAT" Desc="Depth"/>
+			<Arg Type="FLOAT" Desc="X" Out="true"/>
+			<Arg Type="FLOAT" Desc="Y" Out="true"/>
+			<Arg Type="FLOAT" Desc="Z" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbde" Name="SAMP_PAUSE_THREAD">
+		<Args>
+			<Arg Type="INT" Desc="Stream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbdf" Name="SAMP_RESUME_THREAD">
+		<Args>
+			<Arg Type="INT" Desc="Stream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbfa" Name="SAMP_PUSH_VARS">
+	</Command>
+	
+	<Command ID="0xbfb" Name="SAMP_POP_VARS">
+	</Command>
+	
+	<Command ID="0xbfe" Name="GET_SAMP_TICK_COUNT">
+		<Args>
+			<Arg Type="INT" Desc="TimeMs" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc34" Name="SAMP_REGISTER_GLOBAL_FUNC">
+		<Args>
+			<Arg Type="STRING" Desc="FuncName"/>
+			<Arg Type="LABEL" Desc="Label"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc35" Name="SAMP_CALL_GLOBAL_FUNC">
+		<Args>
+			<Arg Type="STRING" Desc="FunctionName"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT" Out="true"/>
+			<Arg Type="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc36" Name="SAMP_FUNC_RET">
+		<Args>
+			<Arg Type="INT"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc37" Name="IS_SAMP_GLOBAL_FUNC_DEFINED">
+		<Args>
+			<Arg Type="STRING" Desc="GlobalFuncName"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc38" Name="GET_SAMP_GLOBAL_FUNC">
+		<Args>
+			<Arg Type="STRING" Desc="GlobalFuncName"/>
+			<Arg Type="INT" Desc="PointerToStream"/>
+			<Arg Type="INT" Desc="PointerToLabel"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc39" Name="SAMP_UNREGISTER_GLOBAL_FUNC">
+		<Args>
+			<Arg Type="STRING" Desc="FuncName"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc5f" Name="IS_SAMP_GLOBAL_VAR_DEFINED">
+		<Args>
+			<Arg Type="STRING" Desc="VarName"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc60" Name="SET_SAMP_GLOBAL_VAR">
+		<Args>
+			<Arg Type="STRING" Desc="GlobalVar"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc61" Name="GET_SAMP_GLOBAL_VAR">
+		<Args>
+			<Arg Type="STRING" Desc="GlobalVar"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT" Desc="Bool"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc62" Name="SAMP_EXEC_CONSOLE_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="String"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc63" Name="SAMP_REGISTER_CONSOLE_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="String"/>
+			<Arg Type="LABEL"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc64" Name="SAMP_UNREGISTER_CONSOLE_COMMAND">
+		<Args>
+			<Arg Type="STRING" Desc="String"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc65" Name="SAMP_DOWNLOAD_URL">
+		<Args>
+			<Arg Type="STRING" Desc="DownloadSource"/>
+			<Arg Type="STRING" Desc="FileName"/>
+			<Arg Type="INT" Desc="DownloadNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc66" Name="GET_SAMP_DOWNLOAD">
+		<Args>
+			<Arg Type="INT" Desc="DownloadNumber"/>
+			<Arg Type="INT" Desc="DownloadStatus" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc67" Name="GET_SAMP_WINDOWS_ENVIRONMENT_VARIABLE">
+		<Args>
+			<Arg Type="STRING" Desc="VarName"/>
+			<Arg Type="INT" Desc="TextBuffer"/>
+			<Arg Type="INT" Desc="BufferSize"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc68" Name="SAMP_UNICODE_STRING_TO_ANSI">
+		<Args>
+			<Arg Type="INT" Desc="UnicodeString"/>
+			<Arg Type="INT" Desc="Pointer"/>
+			<Arg Type="INT" Desc="BufferSize"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc69" Name="SAMP_ANSI_STRING_TO_UNICODE">
+		<Args>
+			<Arg Type="INT" Desc="AnsiString"/>
+			<Arg Type="INT" Desc="Pointer"/>
+			<Arg Type="INT" Desc="BufferSize"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc6a" Name="SAMP_CREATE_CUSTOM_THREAD_AT_LABEL">
+		<Args>
+			<Arg Type="LABEL" Desc="Label"/>
+			<Arg Type="INT" Desc="PointerToStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc6b" Name="SAMP_CREATE_CUSTOM_THREAD_AT_POINTER">
+		<Args>
+			<Arg Type="INT" Desc="PointerToScript"/>
+			<Arg Type="INT" Desc="StreamPointer"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc6c" Name="SET_SAMP_THREAD_LOCAL_VAR">
+		<Args>
+			<Arg Type="INT" Desc="StreamPointer"/>
+			<Arg Type="INT" Desc="VarNumber"/>
+			<Arg Type="FLOAT" Desc="Float"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc6d" Name="GET_SAMP_THREAD_LOCAL_VAR">
+		<Args>
+			<Arg Type="INT" Desc="StreamPointer"/>
+			<Arg Type="INT" Desc="VarNumber"/>
+			<Arg Type="FLOAT" Desc="Value" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc6e" Name="SAMP_DESTROY_CUSTOM_THREAD">
+		<Args>
+			<Arg Type="INT" Desc="StreamPointer"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc6f" Name="SAMP_RESTART_CUSTOM_THREAD">
+		<Args>
+			<Arg Type="INT" Desc="StreamPointer"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc70" Name="GET_SAMP_MODULE_HANDLE">
+		<Args>
+			<Arg Type="STRING" Desc="LibraryName"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc71" Name="GET_SAMP_MODULE_PROC_ADDRESS">
+		<Args>
+			<Arg Type="INT" Desc="Library"/>
+			<Arg Type="STRING" Desc="FunctionName"/>
+			<Arg Type="INT" Desc="Function" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc72" Name="SET_SAMP_SET_VIRTUAL_KEY_DOWN">
+		<Args>
+			<Arg Type="INT" Desc="KeyNumber"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc74" Name="SAMP_CREATE_TIMER_INTERVAL_ON_LABEL">
+		<Args>
+			<Arg Type="INT" Desc="IntervalMs"/>
+			<Arg Type="LABEL" Desc="Label"/>
+			<Arg Type="INT" Desc="timer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc75" Name="SAMP_KILL_TIMER">
+		<Args>
+			<Arg Type="INT" Desc="TimerNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc76" Name="SAMP_RESET_TIMER">
+		<Args>
+			<Arg Type="INT" Desc="TimerNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc77" Name="SET_SAMP_TIMER_INTERVAL">
+		<Args>
+			<Arg Type="INT" Desc="timerNumber"/>
+			<Arg Type="INT" Desc="interval(in ms)"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc78" Name="SET_SAMP_TIMER_ACTIVE">
+		<Args>
+			<Arg Type="INT" Desc="TimerNumber"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc79" Name="IS_SAMP_TIMER_ACTIVE">
+		<Args>
+			<Arg Type="INT" Desc="TimerNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc7a" Name="GET_SAMP_TIMER_INTERVAL">
+		<Args>
+			<Arg Type="INT" Desc="TimerNumber"/>
+			<Arg Type="INT" Desc="interval(in ms)" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc7b" Name="GET_SAMP_TIMER_TIME_ELAPSED">
+		<Args>
+			<Arg Type="INT" Desc="TimerNumber"/>
+			<Arg Type="INT" Desc="TimeElapsed" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc7c" Name="GET_SAMP_TIMER_TIME_LEFT">
+		<Args>
+			<Arg Type="INT" Desc="TimerNumber"/>
+			<Arg Type="INT" Desc="RemainingTime(in ms)" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc7d" Name="SAMP_REALESE_DOWNLOAD">
+		<Args>
+			<Arg Type="INT" Desc="DownloadNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc7e" Name="IS_SAMP_CONSOLE_ACTIVE">
+	</Command>
+	
+	<Command ID="0xc8d" Name="SET_SAMP_CLIPBOARD_TEXT">
+		<Args>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc8e" Name="GET_SAMP_CLIPBOARD_TEXT">
+		<Args>
+			<Arg Type="STRING" Desc="AllocatedBuffer" Out="true"/>
+			<Arg Type="INT" Desc="SizeToCopy"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc91" Name="IS_SAMP_CONSOLE_COMMAND_DEFINED">
+		<Args>
+			<Arg Type="STRING" Desc="Command"/>
+		</Args>
+	</Command>
+			
+	<!-- Raknet opcodes (SampFuncs) -->	
+
+	<Command ID="0xb3d" Name="SF_RAKNET_NEW_BIT_STREAM">
+		<Args>
+			<Arg Type="INT" Desc="BitStream" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb3e" Name="SF_RAKNET_DELETE_BIT_STREAM">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb3f" Name="SF_RAKNET_RESET_BIT_STREAM">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb40" Name="SF_RAKNET_BIT_STREAM_WRITE_DATA">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="PARAM" Desc="Value"/> 
+			<Arg Type="INT" Desc="type"/>
+			<Arg Type="INT" Desc="size"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb41" Name="SAMP_RAKNET_SEND_A_BIT_STREAM_AS_RPC">
+		<Args>
+			<Arg Type="INT" Desc="RPC_ID"/>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="priority"/>
+			<Arg Type="INT" Desc="reliability"/>
+			<Arg Type="INT" Desc="ChannelBusy"/>
+			<Arg Type="INT" Desc="SkipTimestamp"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb42" Name="SAMP_RAKNET_SEND_BIT_STREAM_WITH_PARAMS">
+		<Args>
+			<Arg Type="INT" Desc="Bitstream"/>
+			<Arg Type="INT" Desc="priority"/>
+			<Arg Type="INT" Desc="reliability"/>
+			<Arg Type="INT" Desc="ChannelBusy"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb7a" Name="GET_SAMP_RAKCLIENT_INTERFACE">
+		<Args>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb7b" Name="GET_SAMP_RAKPEER">
+		<Args>
+			<Arg Type="INT" Desc="PointerToRakpeer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb7c" Name="GET_SAMP_RAKCLIENT_FUNC_BY_INDEX">
+		<Args>
+			<Arg Type="INT" Desc="FunctionAddressIndex"/>
+			<Arg Type="INT" Desc="FunctionAddress" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb7d" Name="GET_SAMP_RAKNET_RPC_FUNC_BY_INDEX">
+		<Args>
+			<Arg Type="INT" Desc="INT"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb7e" Name="GET_SAMP_RAKNET_RPC_NODE_BY_INDEX">
+		<Args>
+			<Arg Type="INT" Desc="RPCIndex"/>
+			<Arg Type="INT" Desc="PointerToRPC" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb8a" Name="SAMP_RAKNET_SEND_RPC_BIT_STREAM">
+		<Args>
+			<Arg Type="INT" Desc="RPC_ID"/>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb8b" Name="SAMP_RAKNET_SEND_BIT_STREAM">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe0" Name="SAMP_RAKNET_HOOK_RET">
+		<Args>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe1" Name="SAMP_RAKNET_SETUP_OUTCOMING_RPC_HOOK">
+		<Args>
+			<Arg Type="LABEL" Desc="BodyHook"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe2" Name="SAMP_RAKNET_SETUP_OUTCOMING_PACKET_HOOK">
+		<Args>
+			<Arg Type="INT" Desc="BodyHook"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe3" Name="SAMP_RAKNET_SETUP_INCOMING_RPC_HOOK">
+		<Args>
+			<Arg Type="INT" Desc="BodyHook"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe4" Name="SAMP_RAKNET_SETUP_INCOMING_PACKET_HOOK">
+		<Args>
+			<Arg Type="INT" Desc="BodyHook"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe5" Name="GET_SAMP_RAKNET_HOOK_PARAM">
+		<Args>
+			<Arg Type="INT" Desc="Type(const)"/>
+			<Arg Type="INT" Desc="ParamValue" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe6" Name="SET_SAMP_RAKNET_HOOK_PARAM">
+		<Args>
+			<Arg Type="INT" Desc="Type(const)"/>
+			<Arg Type="INT" Desc="ParamValue"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe7" Name="SAMP_RAKNET_BIT_STREAM_READ">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="ReadValue"/>
+			<Arg Type="INT" Desc="Value" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe8" Name="SAMP_RAKNET_BIT_STREAM_READ_ARRAY">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="Buffer"/>
+			<Arg Type="INT" Desc="Size(in bytes)"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbe9" Name="SAMP_RAKNET_BIT_STREAM_RESET_READ_POINTER">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbea" Name="SAMP_RAKNET_BIT_STREAM_RESET_WRITE_POINTER">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbeb" Name="SAMP_RAKNET_BIT_STREAM_IGNORE_BITS">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="NumberOfBits"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbec" Name="SAMP_RAKNET_BIT_STREAM_SET_WRITE_OFFSET">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="offset(bits)"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbed" Name="SAMP_RAKNET_BIT_STREAM_SET_READ_OFFSET">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="offset(bits)"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbee" Name="SAMP_RAKNET_BIT_STREAM_GET_NUMBER_OF_BITS_USED">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="number"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbef" Name="GET_SAMP_RAKNET_NUMBER_OF_BYTES_USED">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="Number" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf0" Name="GET_SAMP_RAKNET_NUMBER_OF_UNREAD_BITS">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="number" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf1" Name="GET_SAMP_RAKNET_WRITE_OFFSET">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="offset(bits)" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf2" Name="GET_SAMP_RAKNET_READ_OFFSET">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="Offset(bits)" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf3" Name="GET_SAMP_RAKNET_DATA_PTR">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf4" Name="SAMP_RAKNET_BIT_STREAM_DECODE_STRING">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="Buffer"/>
+			<Arg Type="INT" Desc="BufferSize"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf5" Name="SAMP_RAKNET_BITSTREAM_ENCODE_STRING">
+		<Args>
+			<Arg Type="INT" Desc="BitStream"/>
+			<Arg Type="INT" Desc="Buffer"/>
+			<Arg Type="INT" Desc="BufferSize"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf6" Name="SAMP_RAKNET_EMUL_RPC_RECEIVE">
+		<Args>
+			<Arg Type="INT" Desc="RPC_ID"/>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf7" Name="SAMP_RAKNET_EMUL_PACKET_RECEIVE">
+		<Args>
+			<Arg Type="INT" Desc="PacketID"/>
+			<Arg Type="INT" Desc="BitStream"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf8" Name="GET_SAMP_RAKNET_RPC_NAME">
+		<Args>
+			<Arg Type="INT" Desc="RPC_ID"/>
+			<Arg Type="INT" Desc="StringPointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbf9" Name="GET_SAMP_RAKNET_PACKET_NAME">
+		<Args>
+			<Arg Type="INT" Desc="PackegeID"/>
+			<Arg Type="INT" Desc="StringPointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<!-- Dialog opcodes (SampFuncs) -->
+	
+	<Command ID="0xb80" Name="SAMP_DIALOG_CREATE">
+		<Args>
+			<Arg Type="STRING" Desc="Title"/>
+			<Arg Type="INT" Desc="Dialog" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb81" Name="SAMP_DIALOG_POP_EVENT_TO_AND_CONTROL_ID_TO">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="EventID" Out="true"/>
+			<Arg Type="INT" Desc="ComponentID" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb82" Name="SAMP_CREATE_BUTTON_IN_DIALOG">
+		<Args>
+			<Arg Type="INT" Desc="dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="STRING" Desc="text"/>
+			<Arg Type="INT" Desc="PosX"/>
+			<Arg Type="INT" Desc="PosY"/>
+			<Arg Type="INT" Desc="dimensionX"/>
+			<Arg Type="INT" Desc="dimensionY"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb83" Name="SAMP_ADD_CHECKBOX_IN_DIALOG">
+		<Args>
+			<Arg Type="INT" Desc="dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="STRING" Desc="text"/>
+			<Arg Type="INT" Desc="PosX"/>
+			<Arg Type="INT" Desc="PosY"/>
+			<Arg Type="INT" Desc="dimensionX"/>
+			<Arg Type="INT" Desc="dimensionY"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb84" Name="SAMP_DIALOG_SET_POS_XY">
+		<Args>
+			<Arg Type="INT" Desc="dialog"/>
+			<Arg Type="INT" Desc="PosX"/>
+			<Arg Type="INT" Desc="PosY"/>
+			<Arg Type="INT" Desc="dimensionX"/>
+			<Arg Type="INT" Desc="dimensionY"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb85" Name="GET_SAMP_DIALOG_POS">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="PosX" Out="true"/>
+			<Arg Type="INT" Desc="PosY" Out="true"/>
+			<Arg Type="INT" Desc="dimensionX" Out="true"/>
+			<Arg Type="INT" Desc="dimensionY" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb86" Name="SAMP_DIALOG_SET_VISIBLE">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb87" Name="IS_SAMP_DIALOG_VISIBLE">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb88" Name="SAMP_DIALOG_ADD_EDITBOX">
+		<Args>
+			<Arg Type="INT" Desc="dialog"/>
+			<Arg Type="INT" Desc="compID"/>
+			<Arg Type="STRING" Desc="text"/>
+			<Arg Type="INT" Desc="X"/>
+			<Arg Type="INT" Desc="Y"/>
+			<Arg Type="INT" Desc="dimensionX"/>
+			<Arg Type="INT" Desc="dimensionY"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb89" Name="GET_SAMP_DIALOG_CONTROL_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="compID"/>
+			<Arg Type="STRING" Desc="Text" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb90" Name="SET_SAMP_DIALOG_CONTROL_VISIBILITY">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb91" Name="SAMP_DIALOG_ADD_STATIC_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="STRING" Desc="text"/>
+			<Arg Type="INT" Desc="PosX"/>
+			<Arg Type="INT" Desc="PosY"/>
+			<Arg Type="INT" Desc="dimensionX"/>
+			<Arg Type="INT" Desc="dimensionY"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb92" Name="IS_SAMP_DIALOG_CHECKBOX_ENABLED">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="CheckboxID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb93" Name="SET_SAMP_DIALOG_BACKGROUND_COLOR">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="Color(ARGB)"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb94" Name="SET_SAMP_DIALOG_CONTROL_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="STRING" Desc="Text"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb95" Name="IS_SAMP_DIALOG_CONTROL_VISIBLE">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb96" Name="SAMP_DIALOG_ADD_SLIDER">
+		<Args>
+			<Arg Type="INT" Desc="dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="INT" Desc="PosX"/>
+			<Arg Type="INT" Desc="PosY"/>
+			<Arg Type="INT" Desc="dimensionX"/>
+			<Arg Type="INT" Desc="dimensionY"/>
+			<Arg Type="INT" Desc="MaxSliderValue"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb97" Name="GET_SAMP_DIALOG_SLIDER_VALUE_TO">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="SliderID"/>
+			<Arg Type="INT" Desc="sliderPosition" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb98" Name="SET_SAMP_DIALOG_VALUE_TO">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="sliderID"/>
+			<Arg Type="INT" Desc="sliderPosition"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb99" Name="SAMP_DIALOG_ADD_LISTBOX">
+		<Args>
+			<Arg Type="INT" Desc="dialog"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="INT" Desc="PosX"/>
+			<Arg Type="INT" Desc="PosY"/>
+			<Arg Type="INT" Desc="dimensionX"/>
+			<Arg Type="INT" Desc="dimensionY"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb9a" Name="SAMP_DIALOG_LISTBOX_INSERT_ELEMENT">
+		<Args>
+			<Arg Type="INT" Desc="Dialog"/>
+			<Arg Type="INT" Desc="listboxID"/>
+			<Arg Type="STRING" Desc="elementText"/>
+			<Arg Type="INT" Desc="INT"/>
+			<Arg Type="INT" Desc="INT"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb9b" Name="SAMP_DIALOG_LISTBOX_SELECTED_ELEMENT">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="listboxID"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb9c" Name="SAMP_DIALOG_LISTBOX_DELETE_ELEMENT">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="listboxID"/>
+			<Arg Type="INT" Desc="ElementNumber"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb9d" Name="SAMP_DIALOG_LISTBOX_ELEMENT_STORE_TEXT_AND_DATA">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="listboxID"/>
+			<Arg Type="INT" Desc="ElementNumber"/>
+			<Arg Type="STRING" Desc="Text" Out="true"/>
+			<Arg Type="INT" Desc="INT" Out="true"/> 
+		</Args>
+	</Command>
+	
+	<Command ID="0xb9e" Name="SET_SAMP_DIALOG_CHECKBOX_STATUS">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CheckboxID"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb9f" Name="SAMP_DIALOG_ENABLE_CAPTION">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba0" Name="IS_SAMP_DIALOG_CAPTION_ENABLED">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba1" Name="SET_SAMP_DIALOG_MINIMIZED">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="Bool"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba2" Name="IS_SAMP_DIALOG_MINIMIZED">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba3" Name="SAMP_DIALOG_CONTROL_FREE">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CompID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba4" Name="SAMP_DIALOG_FREE">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba5" Name="SET_SAMP_DIALOG_FOCUS_ON_CONTROL">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CompID"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba6" Name="SET_SAMP_DIALOG_CONTROL_SIZE">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="INT" Desc="X"/>
+			<Arg Type="INT" Desc="Y"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba7" Name="GET_SAMP_DIALOG_CONTROL_SIZE">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="INT" Desc="X" Out="true"/>
+			<Arg Type="INT" Desc="Y" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba8" Name="SET_SAMP_DIALOG_CONTROL_POS">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="INT" Desc="X"/>
+			<Arg Type="INT" Desc="Y"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xba9" Name="GET_SAMP_DIALOG_CONTROL_POS">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CompID"/>
+			<Arg Type="INT" Desc="X"/>
+			<Arg Type="INT" Desc="Y"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbaa" Name="SET_SAMP_DIALOG_CHECKBOX_COLOR">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+			<Arg Type="INT" Desc="CheckboxID"/>
+			<Arg Type="INT" Desc="Color"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xbab" Name="IS_SAMP_DIALOG_EXISTS">
+		<Args>
+			<Arg Type="INT" Desc="DialogID"/>
+		</Args>
+	</Command>
+	
+	<!-- Math opcodes (SampFuncs) -->
+	
+	<Command ID="0xc00" Name="SAMP_MATH_ABS">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="ModuleNumber" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc01" Name="SAMP_MATH_RADION_TO_ANGLE">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Radians"/>
+			<Arg Type="FLOAT" Desc="degrees" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc02" Name="SAMP_MATH_ANGLE_TO_RADIAN">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Degrees"/>
+			<Arg Type="FLOAT" Desc="radians" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc03" Name="SAMP_MATH_SINE">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="sine" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc04" Name="SAMP_MATH_ARCSINE">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+      <Arg Type="FLOAT" Desc="Arcsine" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc05" Name="SAMP_MATH_COSINE">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="Cosine" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc06" Name="SAMP_MATH_ARCCOSINE">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="arccosine" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc07" Name="SAMP_MATH_TANGENT">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="Tangent" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc08" Name="SAMP_MATH_ARCTANGENT">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="arctangent" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc09" Name="SAMP_MATH_POWER">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="Degree"/>
+			<Arg Type="FLOAT" Desc="NumberRaisedToPower" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc0a" Name="SAMP_MATH_CEIL">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="IntegerPart" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc0b" Name="SAMP_MATH_FLOOR">
+		<Args> 
+			<Arg Type="FLOAT" Desc="Number"/>
+			<Arg Type="FLOAT" Desc="LargestIntegerPart" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc30" Name="SAMP_MATH_MATRIX_TO_QUAT">
+		<Args> 
+			<Arg Type="INT" Desc="Buffer"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc31" Name="SAMP_MATH_QUAT_TO_MATRIX">
+		<Args> 
+			<Arg Type="INT" Desc="Buffer"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<!-- Memory opcodes(SampFuncs)  -->
+	
+	<Command ID="0xb2d" Name="WRITE_SAMP_MEMORY">
+		<Args> 
+			<Arg Type="INT" Desc="Offset"/>
+			<Arg Type="INT" Desc="Value"/>
+			<Arg Type="INT" Desc="Size"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xb2e" Name="READ_SAMP_MEMORY">
+		<Args> 
+			<Arg Type="INT" Desc="Offset"/>
+			<Arg Type="INT" Desc="Size"/>
+			<Arg Type="PARAM" Desc="value" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc0c" Name="READ_SAMP_STRUCT_ELEMENT">
+		<Args> 
+			<Arg Type="INT" Desc="StructAddress"/>
+			<Arg Type="INT" Desc="offset"/>
+			<Arg Type="INT" Desc="ElementSize"/>
+			<Arg Type="INT" Desc="value" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc0d" Name="WRITE_SAMP_STRUCT_ELEMENT">
+		<Args> 
+			<Arg Type="INT" Desc="StructAddress"/>
+			<Arg Type="INT" Desc="offset"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="value"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc0e" Name="READ_SAMP_ARRAY_ELEMENT">
+		<Args> 
+			<Arg Type="INT" Desc="ArrayAddress"/>
+			<Arg Type="INT" Desc="elementIndex"/>
+			<Arg Type="INT" Desc="value" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc0f" Name="WRITE_SAMP_ARRAY_ELEMENT">
+		<Args> 
+			<Arg Type="INT" Desc="ArrayAddress"/>
+			<Arg Type="INT" Desc="elementIndex"/>
+			<Arg Type="INT" Desc="Value"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc10" Name="SAMP_MEMCPY">
+		<Args> 
+			<Arg Type="INT" Desc="Destination"/>
+			<Arg Type="INT" Desc="source"/>
+			<Arg Type="INT" Desc="size"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc11" Name="SAMP_MEMSET">
+		<Args> 
+			<Arg Type="INT" Desc="Address"/>
+			<Arg Type="INT" Desc="value"/>
+			<Arg Type="INT" Desc="size"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc12" Name="SAMP_MEMCMP">
+		<Args>
+			<Arg Type="INT" Desc="1ºaddress"/>
+			<Arg Type="INT" Desc="2ºaddress"/>
+			<Arg Type="INT" Desc="size"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc1d" Name="READ_SAMP_ARRAY_ELEMENT_SIZE">
+		<Args>
+			<Arg Type="INT" Desc="ArrayAddress"/>
+			<Arg Type="INT" Desc="elementIndex"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="Value" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc1e" Name="WRITE_SAMP_ARRAY_ELEMENT_SIZE">
+		<Args>
+			<Arg Type="INT" Desc="ArrayAddress"/>
+			<Arg Type="INT" Desc="elementIndex"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="Value" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc1f" Name="GET_SAMP_STRING_ARRAY">
+		<Args>
+			<Arg Type="INT" Desc="ArrayAddress"/>
+			<Arg Type="INT" Desc="ElementIndex"/>
+			<Arg Type="INT" Desc="Size"/>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc20" Name="SAMP_STRING_ARRAY">
+		<Args>
+			<Arg Type="INT" Desc="ArrayAddress"/>
+			<Arg Type="INT" Desc="elementIndex"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="string"/>
+		</Args>
+	</Command>
+
+	<!-- Render opcodes (SampFuncs)-->
+	
+	<Command ID="0xb66" Name="SAMP_RENDER_ARGB">
+		<Args>
+			<Arg Type="INT" Desc="ARGB_Color"/>
+			<Arg Type="INT" Desc="alpha" Out="true"/>
+			<Arg Type="INT" Desc="red" Out="true"/>
+			<Arg Type="INT" Desc="green" Out="true"/>
+			<Arg Type="INT" Desc="blue" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb67" Name="SAMP_CONVERT_CHANNELS_TO_ARGB">
+		<Args>
+			<Arg Type="INT" Desc="alpha"/>
+			<Arg Type="INT" Desc="red"/>
+			<Arg Type="INT" Desc="green"/>
+			<Arg Type="INT" Desc="blue"/>
+			<Arg Type="INT" Desc="ARGB_Color" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb68" Name="SAMP_RENDER_DRAW_LINE">
+		<Args>
+			<Arg Type="INT" Desc="StartCoords(X)"/>
+			<Arg Type="INT" Desc="Y"/>
+			<Arg Type="INT" Desc="EndCoords(X)"/>
+			<Arg Type="INT" Desc="Y"/>
+			<Arg Type="INT" Desc="Thickness"/>
+			<Arg Type="INT" Desc="Color"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb69" Name="SAMP_RENDER_DRAW_BOX">
+		<Args>
+			<Arg Type="INT" Desc="X"/>
+			<Arg Type="INT" Desc="Y"/>
+			<Arg Type="INT" Desc="size(width)"/>
+			<Arg Type="INT" Desc="size(heigth)"/>
+			<Arg Type="INT" Desc="color"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb6a" Name="SAMP_RENDER_DRAW_BOX_BORDER">
+		<Args>
+			<Arg Type="INT" Desc="X"/>
+			<Arg Type="INT" Desc="Y"/>
+			<Arg Type="INT" Desc="size(width)"/>
+			<Arg Type="INT" Desc="size(heigth)"/>
+			<Arg Type="INT" Desc="Color"/>
+			<Arg Type="INT" Desc="StrokeWeigth"/>
+			<Arg Type="INT" Desc="StrokeColor"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb6b" Name="GET_SAMP_RENDER_LENGTH_TEXT">
+		<Args>
+			<Arg Type="INT" Desc="Font"/>
+			<Arg Type="STRING" Desc="Text"/>
+			<Arg Type="INT" Desc="TextSize" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb6c" Name="GET_SAMP_RENDER_HEIGHT_FONT_CHARACTERS">
+		<Args>
+			<Arg Type="INT" Desc="Font"/>
+			<Arg Type="INT" Desc="FontHeight" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb6d" Name="SAMP_CREATE_FONT">
+		<Args>
+			<Arg Type="STRING" Desc="FontName"/>
+			<Arg Type="INT" Desc="Size"/>
+			<Arg Type="INT" Desc="Flags"/>
+			<Arg Type="INT" Desc="PointerToFont" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb6e" Name="SAMP_RENDER_RELEASE_FONT">
+		<Args>
+			<Arg Type="INT" Desc="PointerToFont"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb6f" Name="SAMP_DRAW_TEXT_USING_FONT">
+		<Args>
+			<Arg Type="INT" Desc="Font(pointer)"/>
+			<Arg Type="STRING" Desc="Text"/>
+			<Arg Type="INT" Desc="X coords"/>
+			<Arg Type="INT" Desc="Y coords"/>
+			<Arg Type="INT" Desc="color"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb70" Name="SAMP_DRAW_POLYGON">
+		<Args>
+			<Arg Type="INT" Desc="X coords"/>
+			<Arg Type="INT" Desc="Y coords"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="corners"/>
+			<Arg Type="INT" Desc="angle"/>
+			<Arg Type="INT" Desc="color"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb71" Name="SAMP_LOAD_TEXTURE_FROM_FILE">
+		<Args>
+			<Arg Type="STRING" Desc="PathToTexture"/>
+			<Arg Type="INT" Desc="pointer" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb72" Name="SAMP_RELEASE_TEXTURE">
+		<Args>
+			<Arg Type="INT" Desc="PointerToTexture"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xb73" Name="SAMP_DRAW_TEXTURE">
+		<Args>
+			<Arg Type="INT" Desc="TexturePointer"/>
+			<Arg Type="INT" Desc="coords X"/>
+			<Arg Type="INT" Desc="coords Y"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="size"/>
+			<Arg Type="INT" Desc="angle"/>
+			<Arg Type="INT" Desc="color"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc8c" Name="SAMP_LOAD_TEXTURE_FROM_FILE_IN_MEMORY">
+		<Args>
+			<Arg Type="PARAM" Desc="AllocatedBuffer" Out="true"/>
+			<Arg Type="INT" Desc="BufferSize"/>
+			<Arg Type="INT" Desc="texture" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<!-- String opcodes (SampFuncs) -->
+	
+	<Command ID="0xc13" Name="SAMP_STRCPY">
+		<Args>
+			<Arg Type="STRING" Desc="Destination"/>
+			<Arg Type="STRING" Desc="source"/>
+		</Args>
+	</Command> 
+	
+	<Command ID="0xc14" Name="SAMP_STRCMP">
+		<Args>
+			<Arg Type="STRING" Desc="FirstLine"/>
+			<Arg Type="STRING" Desc="SecondLine"/>
+		</Args>
+	</Command>  
+	
+	<Command ID="0xc15" Name="SAMP_STRCAR">
+		<Args>
+			<Arg Type="STRING" Desc="text"/>
+			<Arg Type="STRING" Desc="text"/>
+		</Args>
+	</Command> 
+	
+	<Command ID="0xc16" Name="SAMP_STRTOK">
+		<Args>
+			<Arg Type="STRING" Desc="string"/>
+			<Arg Type="STRING" Desc="string"/>
+			<Arg Type="INT" Desc="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc17" Name="SAMP_STRLEN">
+		<Args>
+			<Arg Type="INT" Desc="PointerToString"/>
+			<Arg Type="INT" Desc="StringLength" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc18" Name="SAMP_STRSTR">
+		<Args>
+			<Arg Type="STRING" Desc="destination"/>
+			<Arg Type="STRING" Desc="SearchString"/>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc19" Name="SAMP_STRCSPN">
+		<Args>
+			<Arg Type="STRING" Desc="String"/>
+			<Arg Type="STRING" Desc="String"/>
+			<Arg Type="INT" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc1a" Name="SAMP_STRING_TO_INT">
+		<Args>
+			<Arg Type="STRING" Desc="String"/>
+			<Arg Type="INT" Desc="Number" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc1b" Name="SAMP_STRING_TO_FLOAT">
+		<Args>
+			<Arg Type="STRING" Desc="string"/>
+			<Arg Type="INT" Desc="FloatingPointNumber" Out="true"/>
+		</Args>
+	</Command>
+
+	<Command ID="0xc1c" Name="SAMP_NUMBER_TO_STRING">
+		<Args>
+			<Arg Type="INT" Desc="value"/>
+			<Arg Type="INT" Desc="NumeralSystem"/>
+			<Arg Type="INT" Desc="PointToBuffer" Out="true"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc21" Name="SAMP_STRICMP">
+		<Args>
+			<Arg Type="STRING" Desc="FirstLine"/>
+			<Arg Type="STRING" Desc="SecondLine"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc22" Name="SAMP_BIN_TO_HEX">
+		<Args>
+			<Arg Type="INT" Desc="pointerToString"/>
+			<Arg Type="INT" Desc="pointerToBuffer"/>
+			<Arg Type="INT" Desc="Size"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc23" Name="SAMP_HEX_TO_BIN">
+		<Args>
+			<Arg Type="INT" Desc="PointerToString"/>
+			<Arg Type="INT" Desc="pointerToBuffer"/>
+			<Arg Type="INT" Desc="Size"/>
+		</Args>
+	</Command>
+	
+	<Command ID="0xc24" Name="SAMP_STRNCPY">
+		<Args>
+			<Arg Type="STRING" Desc="Destination"/>
+			<Arg Type="STRING" Desc="Source"/>
+			<Arg Type="INT" Desc="size"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc25" Name="SAMP_STRNCMP">
+		<Args>
+			<Arg Type="STRING" Desc="FirstString"/>
+			<Arg Type="STRING" Desc="secondString"/>
+			<Arg Type="INT" Desc="length"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc26" Name="SAMP_STRUPR">
+		<Args>
+			<Arg Type="INT" Desc="PointerToString"/>
+			<Arg Type="INT" Desc="PointerToBuffer"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc27" Name="SAMP_STRNCAT">
+		<Args>
+			<Arg Type="INT" Desc="Pointer"/>
+			<Arg Type="PARAM" Desc="string(pointer)"/>
+			<Arg Type="INT" Desc="size"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc28" Name="SAMP_STRLWR">
+		<Args>
+			<Arg Type="INT" Desc="INT"/>
+			<Arg Type="INT" Desc="INT"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc29" Name="SAMP_STRISTR">
+		<Args>
+			<Arg Type="INT" Desc="INT"/>
+			<Arg Type="PARAM"/>
+			<Arg Type="INT" Desc="INT"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc2a" Name="SAMP_STRCHR">
+		<Args>
+			<Arg Type="INT" Desc="PointerToString"/>
+			<Arg Type="INT" Desc="character"/>
+			<Arg Type="INT" Desc="pointer" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc2b" Name="SAMP_STRPBRK">
+		<Args>
+			<Arg Type="INT" Desc="PointerString"/>
+			<Arg Type="STRING" Desc="List"/>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc2c" Name="SAMP_STRRCHR">
+		<Args>
+			<Arg Type="INT" Desc="PointerString"/>
+			<Arg Type="INT" Desc="Character"/>
+			<Arg Type="INT" Desc="Pointer" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc2d" Name="SAMP_STRREV">
+		<Args>
+			<Arg Type="INT" Desc="PointerString"/>
+			<Arg Type="INT" Desc="pointerBuffer"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc2e" Name="SAMP_STRSPN">
+		<Args>
+			<Arg Type="INT" Desc="PointerString"/>
+			<Arg Type="STRING" Desc="symbols"/>
+			<Arg Type="INT" Desc="Character" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc2f" Name="SAMP_STRTOL">
+		<Args>
+			<Arg Type="INT"/>
+			<Arg Type="INT"/>
+			<Arg Type="INT" Out="true"/>
+			<Arg Type="INT" Out="true"/>
+		</Args>
+	</Command>	
+	
+	<Command ID="0xc3a" Name="GET_SAMP_POINTER_STRING">
+		<Args>
+			<Arg Type="STRING" Desc="String"/>
+			<Arg Type="INT" Desc="pointer" Out="true"/>
+		</Args>
+	</Command>	
+
+<!-- samp funcs adapted for Gta3script by killer -->
