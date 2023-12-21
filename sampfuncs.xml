@@ -935,7 +935,7 @@
 		</Args>
 	</Command>
 	
-	<Command ID="0xc52" Name="´SET_SAMP_TEXTDRAW_LETTER_SIZE">
+	<Command ID="0xc52" Name="SET_SAMP_TEXTDRAW_LETTER_SIZE">
 		<Args>
 			<Arg Type="INT" Desc="TextdrawID"/>
 			<Arg Type="FLOAT" Desc="X"/>
