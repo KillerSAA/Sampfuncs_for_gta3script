@@ -782,7 +782,7 @@
 	
 	<Command ID="0xbd7" Name="GET_SAMP_DIALOG_TEXT">
 		<Args>
-			<Arg Type="STRING" Desc="Buffer(Text)" Out="true"/>
+			<Arg Type="INT" Desc="Buffer" Out="true"/>
 		</Args>
 	</Command>
 	
